@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TinyFactory: Precision Works — Privacy Policy</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.55; max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; color: #1b1b1b; }
+  h1 { font-size: 1.6em; margin-bottom: 0.1em; }
+  h2 { font-size: 1.15em; margin-top: 2em; border-bottom: 1px solid #ddd; padding-bottom: 0.25em; }
+  .meta { color: #666; font-size: 0.92em; margin-bottom: 2em; }
+  ul { padding-left: 1.3em; }
+  a { color: #0a5; }
+  .contact { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>TinyFactory: Precision Works — Privacy Policy</h1>
+<p class="meta">Last updated: October 13, 2026</p>
+
+<h2>Who this is about</h2>
+<p>TinyFactory: Precision Works is an independent mobile puzzle game developed by Onder Ozbek ("the developer"). This policy covers the TinyFactory iOS beta app.</p>
+<p>Contact: <span class="contact">onderozbek@gmail.com</span></p>
+
+<h2>What data this app collects</h2>
+<p>TinyFactory collects minimal, gameplay-focused analytics to understand how the beta's Chapter 1 levels play and where players get stuck. Specifically, the app sends event data for:</p>
+<ul>
+  <li>App/session start.</li>
+  <li>Level start, completion, restart, and exit.</li>
+  <li>Your first interaction (rotate/place) within a level.</li>
+  <li>Picking up and placing factory parts, including whether a placement attempt succeeded.</li>
+  <li>Being shown the in-game onboarding guidance for installing machine components.</li>
+  <li>Puzzle-solved and first-output production moments within a level.</li>
+  <li>Tapping Continue to move from a completed level to the next one.</li>
+  <li>Unlocking a chapter reward (the Smart Safety Sensor).</li>
+</ul>
+<p>Each event carries only: a randomly generated installation identifier, a per-session identifier, the app version/build, the level number and puzzle-specific context (for example, which socket was used, whether a placement was valid), and a timestamp. <strong>The installation identifier is generated once and stored on your device, and is also sent to PostHog with every single analytics event</strong> - that is how events from the same install are grouped together (see "Is this data linked to you personally?" below for exactly what that does and does not mean). No gameplay event contains your name, email address, photos, contacts, location, or any other personal information you did not already give us directly.</p>
+<p>TinyFactory does <strong>not</strong> collect: your name, email, or any account information (the game has no accounts or login); your precise or approximate location (IP-based geolocation is explicitly disabled, see below); any advertising identifier; contacts, photos, microphone, or camera data (the app requests none of these permissions); or any data from other apps on your device.</p>
+
+<h2>Is this data linked to you personally?</h2>
+<p>The installation identifier is a <strong>pseudonymous</strong> identifier: a random value generated once when you install the app, stored on your device, and sent to PostHog with every event. It is not a name, email address, or any other directly identifying information, and it is never combined with one. The gameplay events linked to it - the behavioral history of that installation, such as which levels, in what order, how long, how many attempts - are themselves pseudonymous data for the same reason: on their own they don't name a person, but they are tied together by a persistent identifier that follows one install across sessions.</p>
+<p><strong>Disabling PostHog's "Person profile" feature does not mean your events are unlinked from each other.</strong> It means PostHog does not build a standing Person/cohort record for the installation identifier. PostHog can and does still associate every event carrying the same installation identifier with each other when queried - that association is how we see one install's session history in the first place. Turning off Person profiles reduces what PostHog does with the data; it does not unlink the events themselves.</p>
+<p>To be precise: a pseudonymous identifier is not the same as fully anonymous data, and we do not claim this telemetry can never constitute "personal data" in the legal sense used by some privacy laws (for example, the EU's GDPR treats a persistent pseudonymous device/online identifier as personal data when it is capable of being linked back to an individual, even without a name attached). If you separately identify yourself to us (for example, by including your name or contact details in TestFlight feedback or an email), we could in principle connect that feedback to your installation's gameplay pattern. We do not do this today and have built no feature to do so, but we will not describe this identifier as "completely anonymous," and we will not claim this data categorically falls outside every legal definition of personal data.</p>
+
+<h2>Who processes this data</h2>
+<p>Gameplay analytics events are sent to and processed by <strong>PostHog, Inc.</strong> (PostHog US Cloud), an independent analytics service, acting as our data processor. Event data is transmitted over standard HTTPS and stored on PostHog's US-hosted infrastructure.</p>
+<ul>
+  <li>Every event explicitly disables PostHog's "person profile" feature — PostHog does not build a person/cohort record tied to your installation identifier.</li>
+  <li>Every event explicitly disables PostHog's IP-based geolocation enrichment — PostHog does not attach a location derived from your IP address to the event.</li>
+  <li>We have additionally enabled PostHog's project-level setting to discard client IP data, which causes PostHog to discard the IP address associated with incoming events for this project rather than storing it on the event record. This describes the verified project setting itself, not every layer of PostHog's own infrastructure (for example, any transient network/edge-level logs outside this setting's control have not been independently audited by us).</li>
+  <li>The app has no advertising SDK, no session-replay recording, and no automatic capture of taps or UI beyond the specific gameplay events listed above.</li>
+</ul>
+
+<h2>Why this data is collected</h2>
+<p>Solely to understand whether the core gameplay loop is clear and enjoyable in this early beta, to find where players get stuck or confused, and to improve reliability and the product based on real play patterns. This data is not used for advertising, is not sold, and is not shared with anyone other than PostHog acting as our processor.</p>
+
+<h2>No advertising or cross-app tracking</h2>
+<p>TinyFactory does not use any advertising network, does not use an advertising identifier, and does not track you across other apps or websites. If this ever changes, this policy will be updated first.</p>
+
+<h2>Data retention and deletion</h2>
+<p>PostHog's exact data retention and queryability settings for this project are confirmed separately and are not restated here as a specific number. One distinction we want to be clear about regardless of that number: a "data is queryable for up to a certain period" window describes how long events remain visible and searchable through PostHog's own tools - it is not the same thing as the underlying event record being permanently deleted from storage at that point. We will not describe the end of a queryability window as automatic deletion.</p>
+<p>TinyFactory does not currently offer an in-app, self-service "delete my data" control, and the app never displays your own installation identifier anywhere in its interface. No event we collect includes a device model, device name, or any other field that could help match a deletion request to one specific person's records. This means we have no reliable way to locate only one specific tester's records on request, and we will not claim otherwise. If you email <span class="contact">onderozbek@gmail.com</span> asking us to delete your data, we can, at most, make an unreliable best-effort attempt based on an approximate play date/time you provide, which may be ambiguous or wrong if another tester played around the same time. If precisely identifying your specific records isn't possible, we can instead delete the entire beta analytics dataset collected to date (affecting all testers, not just you) as a fallback.</p>
+
+<h2>Changes to this policy</h2>
+<p>If what we collect changes — new event types, a new processor, or a change in retention or deletion practice — we will update this policy and link the updated version from the app's TestFlight or App Store listing before the change ships.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy, or a data-deletion request: <span class="contact">onderozbek@gmail.com</span></p>
+
+</body>
+</html>
